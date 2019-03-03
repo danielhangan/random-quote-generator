@@ -3,6 +3,19 @@ import { random } from 'lodash';
 import 'typeface-roboto';
 import { Grid, withStyles } from '@material-ui/core';
 import QuoteMachine from './components/QuoteMachine';
+import Particles from 'react-particles-js';
+
+const particlesOptions = {
+            		particles: {
+                  number: {
+                    value: 100,
+                    density:{
+                      enable: true,
+                      value_area: 800
+                    }
+                  }
+                }
+              }
 
 
 const styles = {
@@ -53,12 +66,15 @@ assignNewQuoteIndex() {
 
   render() {
     return (
+
     <Grid className={this.props.classes.container} id="quote-box" justify="center" container>
       <Grid xs={11} lg={8} item>
       { this.selectedQuote ? 
     <QuoteMachine selectedQuote={ this.selectedQuote } assignNewQuoteIndex={this.assignNewQuoteIndex} />
         : null
       }
+            <Particles className='particles'
+        params={particlesOptions} />
       </Grid>
     </Grid>
     );

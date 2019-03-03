@@ -12,9 +12,10 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
   <Card>
       <CardContent>
-            <Typography id="text">
-                {selectedQuote.quote} - <span id="author">{selectedQuote.author}</span>
+            <Typography id="text" variant="h6">
+                {selectedQuote.quote}
             </Typography>
+            <Typography align="left"><span id="author"><em>{selectedQuote.author}</em></span></Typography>
       </CardContent>
     <CardActions>
          <Button id="new-quote" size="small" onClick={assignNewQuoteIndex}>Next Quote</Button>
